@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		532060041D541D7E00584F1E /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532060031D541D7E00584F1E /* Bridge.swift */; };
+		532060061D5420A000584F1E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532060051D5420A000584F1E /* Dashboard.storyboard */; };
+		532060081D5420AE00584F1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532060071D5420AE00584F1E /* DashboardViewController.swift */; };
+		53F013881D4BE6B600833844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F013871D4BE6B600833844 /* AppDelegate.swift */; };
+		53F0138A1D4BE6B600833844 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F013891D4BE6B600833844 /* OnboardViewController.swift */; };
+		53F0138D1D4BE6B600833844 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F0138B1D4BE6B600833844 /* Onboard.storyboard */; };
+		53F0138F1D4BE6B600833844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F0138E1D4BE6B600833844 /* Assets.xcassets */; };
+		53F013921D4BE6B600833844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F013901D4BE6B600833844 /* LaunchScreen.storyboard */; };
+		53F0139D1D4BE6B600833844 /* HueBrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F0139C1D4BE6B600833844 /* HueBrisTests.swift */; };
+		53F013AA1D4BE76500833844 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F013A91D4BE76500833844 /* HueSDK_iOS.framework */; };
+		84D06C166392B2237B0BD68A /* Pods_HueBris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8551B83C2FCD4D772F039717 /* Pods_HueBris.framework */; };
+		96E434AB72B8315A9C62895E /* Pods_HueBrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A83504C7E37DCD4EEACCBC /* Pods_HueBrisTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53F013991D4BE6B600833844 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53F0137C1D4BE6B500833844 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53F013831D4BE6B500833844;
+			remoteInfo = HueBris;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		131BD2DB373F6EB72A0F068A /* Pods-HueBrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBrisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HueBrisTests/Pods-HueBrisTests.debug.xcconfig"; sourceTree = "<group>"; };
+		532060031D541D7E00584F1E /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		532060051D5420A000584F1E /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		532060071D5420AE00584F1E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		53F013841D4BE6B500833844 /* HueBris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueBris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F013871D4BE6B600833844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53F013891D4BE6B600833844 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		53F0138C1D4BE6B600833844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
+		53F0138E1D4BE6B600833844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53F013911D4BE6B600833844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53F013931D4BE6B600833844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F013981D4BE6B600833844 /* HueBrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueBrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F0139C1D4BE6B600833844 /* HueBrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBrisTests.swift; sourceTree = "<group>"; };
+		53F0139E1D4BE6B600833844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F013A91D4BE76500833844 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		53F013B11D4BE81F00833844 /* HueBris-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HueBris-Bridging-Header.h"; sourceTree = "<group>"; };
+		570EF284BFCA6CE1287F19E8 /* Pods-HueBris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HueBris/Pods-HueBris.debug.xcconfig"; sourceTree = "<group>"; };
+		7293365EB3EA8D73C58763EA /* Pods-HueBrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HueBrisTests/Pods-HueBrisTests.release.xcconfig"; sourceTree = "<group>"; };
+		8551B83C2FCD4D772F039717 /* Pods_HueBris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A83504C7E37DCD4EEACCBC /* Pods_HueBrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB27560A0D34FB77E60706D /* Pods-HueBris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBris.release.xcconfig"; path = "Pods/Target Support Files/Pods-HueBris/Pods-HueBris.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53F013811D4BE6B500833844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F013AA1D4BE76500833844 /* HueSDK_iOS.framework in Frameworks */,
+				84D06C166392B2237B0BD68A /* Pods_HueBris.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F013951D4BE6B600833844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E434AB72B8315A9C62895E /* Pods_HueBrisTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53F0137B1D4BE6B500833844 = {
+			isa = PBXGroup;
+			children = (
+				53F013861D4BE6B600833844 /* HueBris */,
+				53F0139B1D4BE6B600833844 /* HueBrisTests */,
+				53F013851D4BE6B500833844 /* Products */,
+				E3C2EE07993AB9DE2F4014B7 /* Pods */,
+				78C3190F69C71FD645C8DE8B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		53F013851D4BE6B500833844 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53F013841D4BE6B500833844 /* HueBris.app */,
+				53F013981D4BE6B600833844 /* HueBrisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53F013861D4BE6B600833844 /* HueBris */ = {
+			isa = PBXGroup;
+			children = (
+				53F013B01D4BE81000833844 /* Misc */,
+				53F013A71D4BE76500833844 /* Libraries */,
+				53F013871D4BE6B600833844 /* AppDelegate.swift */,
+				53F013891D4BE6B600833844 /* OnboardViewController.swift */,
+				53F0138B1D4BE6B600833844 /* Onboard.storyboard */,
+				53F0138E1D4BE6B600833844 /* Assets.xcassets */,
+				53F013901D4BE6B600833844 /* LaunchScreen.storyboard */,
+				53F013931D4BE6B600833844 /* Info.plist */,
+				532060031D541D7E00584F1E /* Bridge.swift */,
+				532060051D5420A000584F1E /* Dashboard.storyboard */,
+				532060071D5420AE00584F1E /* DashboardViewController.swift */,
+			);
+			path = HueBris;
+			sourceTree = "<group>";
+		};
+		53F0139B1D4BE6B600833844 /* HueBrisTests */ = {
+			isa = PBXGroup;
+			children = (
+				53F0139C1D4BE6B600833844 /* HueBrisTests.swift */,
+				53F0139E1D4BE6B600833844 /* Info.plist */,
+			);
+			path = HueBrisTests;
+			sourceTree = "<group>";
+		};
+		53F013A71D4BE76500833844 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				53F013A81D4BE76500833844 /* HueSDK */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		53F013A81D4BE76500833844 /* HueSDK */ = {
+			isa = PBXGroup;
+			children = (
+				53F013A91D4BE76500833844 /* HueSDK_iOS.framework */,
+			);
+			path = HueSDK;
+			sourceTree = "<group>";
+		};
+		53F013B01D4BE81000833844 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				53F013B11D4BE81F00833844 /* HueBris-Bridging-Header.h */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		78C3190F69C71FD645C8DE8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8551B83C2FCD4D772F039717 /* Pods_HueBris.framework */,
+				C6A83504C7E37DCD4EEACCBC /* Pods_HueBrisTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3C2EE07993AB9DE2F4014B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				570EF284BFCA6CE1287F19E8 /* Pods-HueBris.debug.xcconfig */,
+				DCB27560A0D34FB77E60706D /* Pods-HueBris.release.xcconfig */,
+				131BD2DB373F6EB72A0F068A /* Pods-HueBrisTests.debug.xcconfig */,
+				7293365EB3EA8D73C58763EA /* Pods-HueBrisTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53F013831D4BE6B500833844 /* HueBris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F013A11D4BE6B600833844 /* Build configuration list for PBXNativeTarget "HueBris" */;
+			buildPhases = (
+				D3EC180E88C09D57A6A3C3CB /* [CP] Check Pods Manifest.lock */,
+				53F013801D4BE6B500833844 /* Sources */,
+				53F013811D4BE6B500833844 /* Frameworks */,
+				53F013821D4BE6B500833844 /* Resources */,
+				4E96DF87734593CBA2F595A4 /* [CP] Embed Pods Frameworks */,
+				E1285B27A410A9B5C534863C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HueBris;
+			productName = HueBris;
+			productReference = 53F013841D4BE6B500833844 /* HueBris.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53F013971D4BE6B600833844 /* HueBrisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F013A41D4BE6B600833844 /* Build configuration list for PBXNativeTarget "HueBrisTests" */;
+			buildPhases = (
+				AFED699D217A563372A1AAB7 /* [CP] Check Pods Manifest.lock */,
+				53F013941D4BE6B600833844 /* Sources */,
+				53F013951D4BE6B600833844 /* Frameworks */,
+				53F013961D4BE6B600833844 /* Resources */,
+				7E147EA3FAEC82A1307322F7 /* [CP] Embed Pods Frameworks */,
+				87CB4AC98C5369381AED8441 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53F0139A1D4BE6B600833844 /* PBXTargetDependency */,
+			);
+			name = HueBrisTests;
+			productName = HueBrisTests;
+			productReference = 53F013981D4BE6B600833844 /* HueBrisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53F0137C1D4BE6B500833844 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Intrepid Pursuits";
+				TargetAttributes = {
+					53F013831D4BE6B500833844 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					53F013971D4BE6B600833844 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 53F013831D4BE6B500833844;
+					};
+				};
+			};
+			buildConfigurationList = 53F0137F1D4BE6B500833844 /* Build configuration list for PBXProject "HueBris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53F0137B1D4BE6B500833844;
+			productRefGroup = 53F013851D4BE6B500833844 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53F013831D4BE6B500833844 /* HueBris */,
+				53F013971D4BE6B600833844 /* HueBrisTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53F013821D4BE6B500833844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F013921D4BE6B600833844 /* LaunchScreen.storyboard in Resources */,
+				53F0138F1D4BE6B600833844 /* Assets.xcassets in Resources */,
+				53F0138D1D4BE6B600833844 /* Onboard.storyboard in Resources */,
+				532060061D5420A000584F1E /* Dashboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F013961D4BE6B600833844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E96DF87734593CBA2F595A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HueBris/Pods-HueBris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E147EA3FAEC82A1307322F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HueBrisTests/Pods-HueBrisTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87CB4AC98C5369381AED8441 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HueBrisTests/Pods-HueBrisTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFED699D217A563372A1AAB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3EC180E88C09D57A6A3C3CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1285B27A410A9B5C534863C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HueBris/Pods-HueBris-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53F013801D4BE6B500833844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532060041D541D7E00584F1E /* Bridge.swift in Sources */,
+				53F0138A1D4BE6B600833844 /* OnboardViewController.swift in Sources */,
+				53F013881D4BE6B600833844 /* AppDelegate.swift in Sources */,
+				532060081D5420AE00584F1E /* DashboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F013941D4BE6B600833844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F0139D1D4BE6B600833844 /* HueBrisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53F0139A1D4BE6B600833844 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53F013831D4BE6B500833844 /* HueBris */;
+			targetProxy = 53F013991D4BE6B600833844 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53F0138B1D4BE6B600833844 /* Onboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53F0138C1D4BE6B600833844 /* Base */,
+			);
+			name = Onboard.storyboard;
+			sourceTree = "<group>";
+		};
+		53F013901D4BE6B600833844 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53F013911D4BE6B600833844 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53F0139F1D4BE6B600833844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53F013A01D4BE6B600833844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53F013A21D4BE6B600833844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 570EF284BFCA6CE1287F19E8 /* Pods-HueBris.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HueBris/Libraries/HueSDK",
+				);
+				INFOPLIST_FILE = HueBris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HueBris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueBris/Misc/HueBris-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53F013A31D4BE6B600833844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB27560A0D34FB77E60706D /* Pods-HueBris.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HueBris/Libraries/HueSDK",
+				);
+				INFOPLIST_FILE = HueBris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HueBris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueBris/Misc/HueBris-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		53F013A51D4BE6B600833844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131BD2DB373F6EB72A0F068A /* Pods-HueBrisTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HueBrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HueBrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HueBris.app/HueBris";
+			};
+			name = Debug;
+		};
+		53F013A61D4BE6B600833844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7293365EB3EA8D73C58763EA /* Pods-HueBrisTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HueBrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HueBrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HueBris.app/HueBris";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53F0137F1D4BE6B500833844 /* Build configuration list for PBXProject "HueBris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F0139F1D4BE6B600833844 /* Debug */,
+				53F013A01D4BE6B600833844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F013A11D4BE6B600833844 /* Build configuration list for PBXNativeTarget "HueBris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F013A21D4BE6B600833844 /* Debug */,
+				53F013A31D4BE6B600833844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F013A41D4BE6B600833844 /* Build configuration list for PBXNativeTarget "HueBrisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F013A51D4BE6B600833844 /* Debug */,
+				53F013A61D4BE6B600833844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53F0137C1D4BE6B500833844 /* Project object */;
+}
