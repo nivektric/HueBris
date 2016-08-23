@@ -8,14 +8,68 @@
 
 import Foundation
 
-class Bridge: NSObject {
+extension PHLightState {
+    
+    private var minBrightness: Int { return 0 }
+    private var maxBrightness: Int { return 254 }
+    
+    var brightnessPercent: Float {
+        get {
+            return Float(Int(brightness) - minBrightness) / Float(maxBrightness - minBrightness)
+        }
+        set {
+            brightness = minBrightness + Int(Float(maxBrightness - minBrightness) * newValue)
+        }
+    }
+    
+    private var minCT: Int { return 153 }
+    private var maxCT: Int { return 454 }
+    
+    var ctPercent: Float {
+        get {
+            return Float(Int(ct) - minCT) / Float(maxCT - minCT)
+        }
+        set {
+            ct = minCT + Int(Float(maxCT - minCT) * newValue)
+        }
+    }
+    
+}
 
+extension PHGroup {
+    
+    var identifiers: [String] {
+        return lightIdentifiers.flatMap{ $0 as? String }
+    }
+    
+    var lights: [PHLight] {
+        return Bridge.sharedInstance.allLights().filter { self.identifiers.contains($0.identifier) }
+    }
+    
+}
+
+class Bridge: NSObject {
+    
+    private struct PendingCommand {
+        
+        let sendDate: NSDate
+        var state: PHLightState
+        
+        
+    }
+
+    static let GroupsUpdatedNotification = "HueGroupsUpdatedNotification"
+    
     static let sharedInstance = Bridge()
 
     private let bridgeIDKey = "bridgeID"
     private let bridgeIPKey = "bridgeIP"
     private let authenticatedKey = "authenticated"
     private let defaults = NSUserDefaults.standardUserDefaults()
+    
+    
+    
+    private var pendingStatesByGroup = [PHGroup : PHLightState]()
 
     let sdk: PHHueSDK = {
         var sdk = PHHueSDK()
@@ -53,7 +107,10 @@ class Bridge: NSObject {
     }
 
     func connect(done: () -> ()) {
-        sdk.setBridgeToUseWithId(bridgeID, ipAddress: bridgeIP)
+        guard let id = bridgeID, let ip = bridgeIP else { return }
+        
+        setupConnection(id, ip: ip)
+        finishSetupConnection()
     }
 
     func setAllLightsToColor(color: UIColor) {
@@ -62,6 +119,10 @@ class Bridge: NSObject {
 
     func setAllLightsOn(on: Bool) {
         allLights().forEach { self.setState($0, state: self.stateForOn(on)) }
+    }
+    
+    func setBrightnessForGroup(group: PHGroup, brightnessPercent: Float) {
+        setStateForGroup(group, state: stateForBrightnessPercent(brightnessPercent))
     }
 
     func allLights() -> [PHLight] {
@@ -72,6 +133,20 @@ class Bridge: NSObject {
             }
         }
         return lights
+    }
+    
+    func allGroups() -> [PHGroup] {
+        var groups = [PHGroup]()
+        
+        // This isn't marked as optional but still sometimes comes back as nil
+        guard let groupDictionary = PHBridgeResourcesReader.readBridgeResourcesCache().groups else { return [] }
+        
+        for group in groupDictionary.values {
+            if let group = group as? PHGroup {
+                groups.append(group)
+            }
+        }
+        return groups
     }
 
 
@@ -90,14 +165,32 @@ class Bridge: NSObject {
         state.on = on
         return state
     }
+    
+    func stateForBrightnessPercent(brightnessPercent: Float) -> PHLightState {
+        let state = PHLightState()
+        state.brightnessPercent = brightnessPercent
+        return state
+    }
 
     func setState(light: PHLight, state: PHLightState) {
         print("settingState = \(state)")
         let api = PHBridgeSendAPI()
-        api.updateLightStateForId(light.identifier, withLightState: state) { (response) in
+        api.updateLightStateForId(light.identifier, withLightState: state) { response in
             print("Response: \(response)")
         }
     }
+    
+    func setStateForGroup(group: PHGroup, state: PHLightState) {
+        
+        print("settingState for group: \(group), state: \(state)")
+        let api = PHBridgeSendAPI()
+        
+        api.setLightStateForGroupWithId(group.identifier, lightState: state) { response in
+            print("Response: \(response)")
+        }
+    }
+    
+    
 
     // MARK: - SDK
 
@@ -119,10 +212,7 @@ class Bridge: NSObject {
             }
 
             found()
-            self.bridgeID = key
-            self.bridgeIP = value
-
-            self.sdk.setBridgeToUseWithId(key, ipAddress: value)
+            self.setupConnection(key, ip: value)
 
             let manager = PHNotificationManager.defaultManager()
             manager.registerObject(self, withSelector: #selector(self.authSuccess), forNotification: PUSHLINK_LOCAL_AUTHENTICATION_SUCCESS_NOTIFICATION)
@@ -130,10 +220,27 @@ class Bridge: NSObject {
             manager.registerObject(self, withSelector: #selector(self.pushlinkNoLocalConnection), forNotification: PUSHLINK_NO_LOCAL_CONNECTION_NOTIFICATION)
             manager.registerObject(self, withSelector: #selector(self.noLocalBridge), forNotification: PUSHLINK_NO_LOCAL_BRIDGE_KNOWN_NOTIFICATION)
             manager.registerObject(self, withSelector: #selector(self.buttonNotPressed), forNotification: PUSHLINK_BUTTON_NOT_PRESSED_NOTIFICATION)
-            
             self.sdk.startPushlinkAuthentication()
         }
         
+    }
+    
+    private func setupConnection(id: String, ip: String) {
+        bridgeID = id
+        bridgeIP = ip
+        sdk.setBridgeToUseWithId(bridgeID, ipAddress: bridgeIP)
+        
+        let manager = PHNotificationManager.defaultManager()
+        manager.registerObject(self, withSelector: #selector(self.groupsUpdated), forNotification: GROUPS_CACHE_UPDATED_NOTIFICATION)
+    }
+    
+    private func finishSetupConnection() {
+        let manager = PHNotificationManager.defaultManager()
+        manager.registerObject(self, withSelector: #selector(localConnection), forNotification: LOCAL_CONNECTION_NOTIFICATION)
+        manager.registerObject(self, withSelector: #selector(noLocalConnection), forNotification: NO_LOCAL_CONNECTION_NOTIFICATION)
+        manager.registerObject(self, withSelector: #selector(notAuthenticated), forNotification: NO_LOCAL_AUTHENTICATION_NOTIFICATION)
+        
+        sdk.enableLocalConnection()
     }
 
     func authSuccess() {
@@ -141,12 +248,7 @@ class Bridge: NSObject {
         authenticated = true
         authenticatedCallback?()
 
-        let manager = PHNotificationManager.defaultManager()
-        manager.registerObject(self, withSelector: #selector(localConnection), forNotification: LOCAL_CONNECTION_NOTIFICATION)
-        manager.registerObject(self, withSelector: #selector(noLocalConnection), forNotification: NO_LOCAL_CONNECTION_NOTIFICATION)
-        manager.registerObject(self, withSelector: #selector(notAuthenticated), forNotification: NO_LOCAL_AUTHENTICATION_NOTIFICATION)
-
-        sdk.enableLocalConnection()
+        finishSetupConnection()
     }
 
     func authFailure() {
@@ -168,7 +270,7 @@ class Bridge: NSObject {
 
     func localConnection() {
         print("localConnection")
-
+        groupsUpdated()
     }
 
     func noLocalConnection() {
@@ -177,6 +279,10 @@ class Bridge: NSObject {
 
     func notAuthenticated() {
         print("notAuthenticated")
+    }
+    
+    func groupsUpdated() {
+        NSNotificationCenter.defaultCenter().postNotificationName(Bridge.GroupsUpdatedNotification, object: self)
     }
 
 }

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A95F9AF1D6A926C000609A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A95F9AE1D6A926C000609A8 /* Assets.xcassets */; };
+		0A95F9B11D6A9290000609A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A95F9B01D6A9290000609A8 /* Info.plist */; };
+		0A95F9B31D6A98D7000609A8 /* GroupControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95F9B21D6A98D7000609A8 /* GroupControlViewController.swift */; };
 		532060041D541D7E00584F1E /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532060031D541D7E00584F1E /* Bridge.swift */; };
 		532060061D5420A000584F1E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532060051D5420A000584F1E /* Dashboard.storyboard */; };
 		532060081D5420AE00584F1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532060071D5420AE00584F1E /* DashboardViewController.swift */; };
 		53F013881D4BE6B600833844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F013871D4BE6B600833844 /* AppDelegate.swift */; };
 		53F0138A1D4BE6B600833844 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F013891D4BE6B600833844 /* OnboardViewController.swift */; };
 		53F0138D1D4BE6B600833844 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F0138B1D4BE6B600833844 /* Onboard.storyboard */; };
-		53F0138F1D4BE6B600833844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F0138E1D4BE6B600833844 /* Assets.xcassets */; };
 		53F013921D4BE6B600833844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F013901D4BE6B600833844 /* LaunchScreen.storyboard */; };
 		53F0139D1D4BE6B600833844 /* HueBrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F0139C1D4BE6B600833844 /* HueBrisTests.swift */; };
 		53F013AA1D4BE76500833844 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F013A91D4BE76500833844 /* HueSDK_iOS.framework */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A95F9AE1D6A926C000609A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A95F9B01D6A9290000609A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A95F9B21D6A98D7000609A8 /* GroupControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupControlViewController.swift; sourceTree = "<group>"; };
 		131BD2DB373F6EB72A0F068A /* Pods-HueBrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBrisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HueBrisTests/Pods-HueBrisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		532060031D541D7E00584F1E /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		532060051D5420A000584F1E /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
@@ -40,9 +45,7 @@
 		53F013871D4BE6B600833844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F013891D4BE6B600833844 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		53F0138C1D4BE6B600833844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
-		53F0138E1D4BE6B600833844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53F013911D4BE6B600833844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		53F013931D4BE6B600833844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53F013981D4BE6B600833844 /* HueBrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueBrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F0139C1D4BE6B600833844 /* HueBrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBrisTests.swift; sourceTree = "<group>"; };
 		53F0139E1D4BE6B600833844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A95F9AA1D6A9239000609A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A95F9AE1D6A926C000609A8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		53F0137B1D4BE6B500833844 = {
 			isa = PBXGroup;
 			children = (
@@ -99,17 +110,17 @@
 		53F013861D4BE6B600833844 /* HueBris */ = {
 			isa = PBXGroup;
 			children = (
+				0A95F9AA1D6A9239000609A8 /* Resources */,
 				53F013B01D4BE81000833844 /* Misc */,
 				53F013A71D4BE76500833844 /* Libraries */,
+				53F013901D4BE6B600833844 /* LaunchScreen.storyboard */,
 				53F013871D4BE6B600833844 /* AppDelegate.swift */,
 				53F013891D4BE6B600833844 /* OnboardViewController.swift */,
 				53F0138B1D4BE6B600833844 /* Onboard.storyboard */,
-				53F0138E1D4BE6B600833844 /* Assets.xcassets */,
-				53F013901D4BE6B600833844 /* LaunchScreen.storyboard */,
-				53F013931D4BE6B600833844 /* Info.plist */,
 				532060031D541D7E00584F1E /* Bridge.swift */,
 				532060051D5420A000584F1E /* Dashboard.storyboard */,
 				532060071D5420AE00584F1E /* DashboardViewController.swift */,
+				0A95F9B21D6A98D7000609A8 /* GroupControlViewController.swift */,
 			);
 			path = HueBris;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 		53F013B01D4BE81000833844 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				0A95F9B01D6A9290000609A8 /* Info.plist */,
 				53F013B11D4BE81F00833844 /* HueBris-Bridging-Header.h */,
 			);
 			path = Misc;
@@ -255,8 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F013921D4BE6B600833844 /* LaunchScreen.storyboard in Resources */,
-				53F0138F1D4BE6B600833844 /* Assets.xcassets in Resources */,
 				53F0138D1D4BE6B600833844 /* Onboard.storyboard in Resources */,
+				0A95F9AF1D6A926C000609A8 /* Assets.xcassets in Resources */,
+				0A95F9B11D6A9290000609A8 /* Info.plist in Resources */,
 				532060061D5420A000584F1E /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A95F9B31D6A98D7000609A8 /* GroupControlViewController.swift in Sources */,
 				532060041D541D7E00584F1E /* Bridge.swift in Sources */,
 				53F0138A1D4BE6B600833844 /* OnboardViewController.swift in Sources */,
 				53F013881D4BE6B600833844 /* AppDelegate.swift in Sources */,
@@ -508,7 +522,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HueBris/Libraries/HueSDK",
 				);
-				INFOPLIST_FILE = HueBris/Info.plist;
+				INFOPLIST_FILE = HueBris/Misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -533,7 +547,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HueBris/Libraries/HueSDK",
 				);
-				INFOPLIST_FILE = HueBris/Info.plist;
+				INFOPLIST_FILE = HueBris/Misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
